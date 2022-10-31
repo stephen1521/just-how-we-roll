@@ -167,22 +167,22 @@ function rollTwentyDice(){
 
 function updateSixMean(num){
     let diceText = document.querySelector('#d6-rolls-mean');
-    diceText.innerText = (num).toFixed(0);
+    diceText.innerText = (num).toFixed(2);
 }
 
 function updateDoubleSixMean(num){
     let diceText = document.querySelector('#double-d6-rolls-mean');
-    diceText.innerText = (num).toFixed(0);
+    diceText.innerText = (num).toFixed(2);
 }
 
 function updateTwelveMean(num){
     let diceText = document.querySelector('#d12-rolls-mean');
-    diceText.innerText = (num).toFixed(0);
+    diceText.innerText = (num).toFixed(2);
 }
 
 function updateTwentyMean(num){
     let diceText = document.querySelector('#d20-rolls-mean');
-    diceText.innerText = (num).toFixed(0);
+    diceText.innerText = (num).toFixed(2);
 }
 
 function updateSixMedian(num){
