@@ -35,7 +35,7 @@ resetText();
 
 let dice = getId('d6-roll');
 dice.addEventListener('click', function(){
-    rollDice(6, sixes, dice);
+    sixes.push(rollDice(6, sixes, dice));
     updateMean(mean(sixes), getId('d6-rolls-mean'));
     updateMedian(median(sixes), getId('d6-rolls-median'));
     updateMode(mode(sixes), getId('d6-rolls-mode'));
@@ -43,8 +43,9 @@ dice.addEventListener('click', function(){
 
 let dice1 = document.querySelector('main');
 dice1.addEventListener('click', function(){
-    rollDice(6, doubleSixes, getId('double-d6-roll-1'));
-    rollDice(6, doubleSixes, getId('double-d6-roll-2'));
+    let roll1 = rollDice(6, doubleSixes, getId('double-d6-roll-1'));
+    let roll2 = rollDice(6, doubleSixes, getId('double-d6-roll-2'));
+    doubleSixes.push(roll1 + roll2);
     updateMean(mean(doubleSixes), getId('double-d6-rolls-mean'));
     updateMedian(median(doubleSixes), getId('double-d6-rolls-median'));
     updateMode(mode(doubleSixes), getId('double-d6-rolls-mode'));
@@ -52,7 +53,7 @@ dice1.addEventListener('click', function(){
 
 let dice2 = getId('d12-roll');
 dice2.addEventListener('click', function(){
-    rollDice(12, twelves, dice2);
+    twelves.push(rollDice(12, twelves, dice2));
     updateMean(mean(twelves), getId('d12-rolls-mean'));
     updateMedian(median(twelves), getId('d12-rolls-median'));
     updateMode(mode(twelves), getId('d12-rolls-mode'));
@@ -60,7 +61,7 @@ dice2.addEventListener('click', function(){
 
 let dice3 = getId('d20-roll');
 dice3.addEventListener('click', function(){
-    rollDice(20, twenties, dice3);
+    twenties.push(rollDice(20, twenties, dice3));
     updateMean(mean(twenties), getId('d20-rolls-mean'));
     updateMedian(median(twenties), getId('d20-rolls-median'));
     updateMode(mode(twenties), getId('d20-rolls-mode'));
@@ -120,7 +121,7 @@ function rollDice(sides, arr, element){
     } else {
         element.src = 'images/numbers/' + num + '.png';
     }
-    arr.push(num);
+    return num;
 }
 
 function updateMean(num, element){
