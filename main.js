@@ -18,7 +18,7 @@ const getRandomNumber = function(max) {
     return result;
 }
 
-function getElementId(str){
+function getId(str){
     return document.querySelector('#' + str);
 }
 
@@ -33,40 +33,40 @@ resetText();
  * EVENT LISTENERS *
  *******************/
 
-let dice = document.querySelector('#d6-roll');
+let dice = getId('d6-roll');
 dice.addEventListener('click', function(){
     rollDice(6, sixes, dice);
-    updateMean(mean(sixes), getElementId('d6-rolls-mean'));
-    updateMedian(median(sixes), getElementId('d6-rolls-median'));
-    updateMode(mode(sixes), getElementId('d6-rolls-mode'));
+    updateMean(mean(sixes), getId('d6-rolls-mean'));
+    updateMedian(median(sixes), getId('d6-rolls-median'));
+    updateMode(mode(sixes), getId('d6-rolls-mode'));
 });
 
 let dice1 = document.querySelector('main');
 dice1.addEventListener('click', function(){
-    rollDice(6, doubleSixes, getElementId('double-d6-roll-1'));
-    rollDice(6, doubleSixes, getElementId('double-d6-roll-2'));
-    updateMean(mean(doubleSixes), getElementId('double-d6-rolls-mean'));
-    updateMedian(median(doubleSixes), getElementId('double-d6-rolls-median'));
-    updateMode(mode(doubleSixes), getElementId('double-d6-rolls-mode'));
+    rollDice(6, doubleSixes, getId('double-d6-roll-1'));
+    rollDice(6, doubleSixes, getId('double-d6-roll-2'));
+    updateMean(mean(doubleSixes), getId('double-d6-rolls-mean'));
+    updateMedian(median(doubleSixes), getId('double-d6-rolls-median'));
+    updateMode(mode(doubleSixes), getId('double-d6-rolls-mode'));
 });
 
-let dice2 = document.querySelector('#d12-roll');
+let dice2 = getId('d12-roll');
 dice2.addEventListener('click', function(){
     rollDice(12, twelves, dice2);
-    updateMean(mean(twelves), getElementId('d12-rolls-mean'));
-    updateMedian(median(twelves), getElementId('d12-rolls-median'));
-    updateMode(mode(twelves), getElementId('d12-rolls-mode'));
+    updateMean(mean(twelves), getId('d12-rolls-mean'));
+    updateMedian(median(twelves), getId('d12-rolls-median'));
+    updateMode(mode(twelves), getId('d12-rolls-mode'));
 });
 
-let dice3 = document.querySelector('#d20-roll');
+let dice3 = getId('d20-roll');
 dice3.addEventListener('click', function(){
     rollDice(20, twenties, dice3);
-    updateMean(mean(twenties), getElementId('d20-rolls-mean'));
-    updateMedian(median(twenties), getElementId('d20-rolls-median'));
-    updateMode(mode(twenties), getElementId('d20-rolls-mode'));
+    updateMean(mean(twenties), getId('d20-rolls-mean'));
+    updateMedian(median(twenties), getId('d20-rolls-median'));
+    updateMode(mode(twenties), getId('d20-rolls-mode'));
 });
 
-let reset = document.querySelector('#reset-button');
+let reset = getId('reset-button');
 reset.addEventListener('click', function(){
     resetArray();
     resetImages();
@@ -85,26 +85,26 @@ function resetArray(){
 }
 
 function resetImages(){
-    getElementId('d6-roll').src = 'images/start/d6.png';
-    getElementId('double-d6-roll-1').src = 'images/start/d6.png';
-    getElementId('double-d6-roll-2').src = 'images/start/d6.png';
-    getElementId('d12-roll').src = 'images/start/d12.jpeg';
-    getElementId('d20-roll').src = 'images/start/d20.jpg';
+    getId('d6-roll').src = 'images/start/d6.png';
+    getId('double-d6-roll-1').src = 'images/start/d6.png';
+    getId('double-d6-roll-2').src = 'images/start/d6.png';
+    getId('d12-roll').src = 'images/start/d12.jpeg';
+    getId('d20-roll').src = 'images/start/d20.jpg';
 }
 
 function resetText(){
-    getElementId('d6-rolls-mean').innerText = 'NA';
-    getElementId('double-d6-rolls-mean').innerText = 'NA';
-    getElementId('d12-rolls-mean').innerText = 'NA';
-    getElementId('d20-rolls-mean').innerText = 'NA';
-    getElementId('d6-rolls-median').innerText = 'NA';
-    getElementId('d6-rolls-mode').innerText = 'NA';
-    getElementId('double-d6-rolls-median').innerText = 'NA';
-    getElementId('double-d6-rolls-mode').innerText = 'NA';
-    getElementId('d12-rolls-median').innerText = 'NA';
-    getElementId('d12-rolls-mode').innerText = 'NA';
-    getElementId('d20-rolls-median').innerText = 'NA';
-    getElementId('d20-rolls-mode').innerText = 'NA';
+    getId('d6-rolls-mean').innerText = 'NA';
+    getId('double-d6-rolls-mean').innerText = 'NA';
+    getId('d12-rolls-mean').innerText = 'NA';
+    getId('d20-rolls-mean').innerText = 'NA';
+    getId('d6-rolls-median').innerText = 'NA';
+    getId('double-d6-rolls-median').innerText = 'NA';
+    getId('d12-rolls-median').innerText = 'NA';
+    getId('d20-rolls-median').innerText = 'NA';
+    getId('d20-rolls-mode').innerText = 'NA';
+    getId('d6-rolls-mode').innerText = 'NA';
+    getId('d12-rolls-mode').innerText = 'NA';
+    getId('double-d6-rolls-mode').innerText = 'NA';
 }
 
 
