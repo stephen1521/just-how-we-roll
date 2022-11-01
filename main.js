@@ -173,8 +173,5 @@ function mode(arr){
             max = i;
         }
     }
-    if(max === 1){
-        return 'NA';
-    }
     return temp.indexOf(max);
 }
