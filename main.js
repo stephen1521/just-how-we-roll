@@ -35,7 +35,7 @@ resetText();
 
 let dice = getId('d6-roll');
 dice.addEventListener('click', function(){
-    sixes.push(rollDice(6, sixes, dice));
+    sixes.push(rollDice(6, dice));
     updateMean(mean(sixes), getId('d6-rolls-mean'));
     updateMedian(median(sixes), getId('d6-rolls-median'));
     updateMode(mode(sixes), getId('d6-rolls-mode'));
@@ -43,8 +43,8 @@ dice.addEventListener('click', function(){
 
 let dice1 = document.querySelector('main');
 dice1.addEventListener('click', function(){
-    let roll1 = rollDice(6, doubleSixes, getId('double-d6-roll-1'));
-    let roll2 = rollDice(6, doubleSixes, getId('double-d6-roll-2'));
+    let roll1 = rollDice(6, getId('double-d6-roll-1'));
+    let roll2 = rollDice(6, getId('double-d6-roll-2'));
     doubleSixes.push(roll1 + roll2);
     updateMean(mean(doubleSixes), getId('double-d6-rolls-mean'));
     updateMedian(median(doubleSixes), getId('double-d6-rolls-median'));
@@ -53,7 +53,7 @@ dice1.addEventListener('click', function(){
 
 let dice2 = getId('d12-roll');
 dice2.addEventListener('click', function(){
-    twelves.push(rollDice(12, twelves, dice2));
+    twelves.push(rollDice(12, dice2));
     updateMean(mean(twelves), getId('d12-rolls-mean'));
     updateMedian(median(twelves), getId('d12-rolls-median'));
     updateMode(mode(twelves), getId('d12-rolls-mode'));
@@ -114,7 +114,7 @@ function resetText(){
  * CLICK HANDLING FUNCTIONS *
 ****************************/
 
-function rollDice(sides, arr, element){
+function rollDice(sides, element){
     let num = getRandomNumber(sides);
     if(sides <= 6){
         element.src = 'images/d6/' + num + '.png';
